@@ -1,79 +1,105 @@
 # shop
-produkt1_name = input("Produkt name :")
+list_P = [ ]
 
-preis_produkt1 = input("Preis:")
+P = input("podukt eingeben : ")
+r = input("Preis: ")
+pr = float(r)
+fr = input("Ist ihr Produkt Lebensmittel('ja' eingeben) oder Essen(irgendwas eingeben) ? ")
 
-preis_produkt1_flt = float(preis_produkt1)
+list_P.insert(0, P)
 
-produkt1_frage = input("Ist ihr Produkt Lebensmittel('y' eingeben) oder Essen(irgendwas eingeben) ? ")
+if fr == "ja":
+  pr_bro = pr-pr*0.07
 
-if  produkt1_frage == "y" :
-    preis_produkt1_flt_brto = preis_produkt1_flt-preis_produkt1_flt*0.07
-    Rechnung_Lm = input("Rechnung berechnen? ")
+else:
+  pr_bro = pr-pr*0.16    
 
-    if  Rechnung_Lm == "ja" :
-        print(str(preis_produkt1_flt) + " €(netto)")
-        print(str(preis_produkt1_flt_brto) + " €(brutto)")
-        
-    else  :
-        produkt2_name = input("Produkt name : ")
-        preis_produkt2 = input("Preis:")
-        preis_produkt2_flt = float(preis_produkt2)
-        produkt2_frage = input("Ist ihr Produkt Lebensmittel('y' eingeben) oder Essen(irgendwas eingeben) ? ")
-        if  produkt2_frage == "y" :
-            preis_produkt2_flt_brto = preis_produkt2_flt-preis_produkt2_flt*0.07
-            Rechnung_Lm_2 = input("Rechnung berechnen? ")
+re = input("Rechnung berechnen? ")
 
-            if Rechnung_Lm_2 == "ja" :
-                Endpreis2 = preis_produkt1_flt + preis_produkt2_flt
-                Endpreis2_str = str(Endpreis2)
-                print( Endpreis2_str + " €(netto)")
-                Endpreis2_brto = preis_produkt1_flt_brto +  preis_produkt2_flt_brto 
-                Endpreis2_str_brto = str(Endpreis2_brto)
-                print( Endpreis2_str_brto + " €(brutto)")
+if re == "ja":
+  print(("warenkorb: ") + str(list_P))
+  print(("preis(netto): ") + str(pr))
+  print(("preis(brutto): ") + str(pr_bro))
 
-            else  :
-                print("hzm")
+else:
+    P = input("podukt eingeben : ")
+    r2 = input("Preis: ")
+    pr2 = float(r2)
+    fr = input("Ist ihr Produkt Lebensmittel('ja' eingeben) oder Essen(irgendwas eingeben) ? ")
+    list_P.insert(1, P)
+    if fr == "ja":
+      pr2_bro = pr2-pr2*0.07
 
-        else :
-            print("hzm3")
-            
+    else:
+      pr2_bro = pr2-pr2*0.16    
 
+    re = input("Rechnung berechnen? ")
 
+    if re == "ja":
+       print(("warenkorb: ") + str(list_P))
+       print(("preis(netto): ") + str(pr + pr2))
+       print(("preis(brutto): ") + str(pr_bro + pr2_bro))
 
-else  :
-    preis_produkt1_flt_brto = preis_produkt1_flt-preis_produkt1_flt*0.16
-    Rechnung1_essen = input("Rechnung berechnen? ")
-    
-    if  Rechnung1_essen == "ja" :
-        print(str(preis_produkt1_flt) + " €(netto)")
-        print(str(preis_produkt1_flt_brto) + " €(brutto)")
-        
-    else  :
-        #test
-        produkt2_name = input("Produkt name : ")
-        preis_produkt2 = input("Preis:")
-        preis_produkt2_flt = float(preis_produkt2)
-        produkt2_frage = input("Ist ihr Produkt Lebensmittel('y' eingeben) oder Essen(irgendwas eingeben) ? ")
-        if  produkt2_frage == "y" :
-            preis_produkt2_flt_brto = preis_produkt2_flt-preis_produkt1_flt*0.16
-            Rechnung2 = input("Rechnung berechnen? ")
+    else:
+       P = input("podukt eingeben : ")
+       r3 = input("Preis: ")
+       pr3 = float(r3)
+       fr = input("Ist ihr Produkt Lebensmittel('ja' eingeben) oder Essen(irgendwas eingeben) ? ")
+       list_P.insert(2, P)
 
-            if Rechnung2 == "ja" :
-                Endpreis2 = preis_produkt1_flt + preis_produkt2_flt
-                Endpreis2_str = str(Endpreis2)
-                print( Endpreis2_str + " €(netto)")
-                Endpreis2_brto = preis_produkt2_flt_brto + preis_produkt1_flt_brto
-                Endpreis2_str_brto = str(Endpreis2_brto)
-                print( Endpreis2_str_brto + " €(brutto)")
+       if fr == "ja":
+        pr3_bro = pr3-pr3*0.07
 
+       else:
+        pr3_bro = pr3-pr3*0.16    
 
-            else  :
-                print("hzm16") 
+       re = input("Rechnung berechnen? ")
 
-        else :
-            print("hzm3")
+       if re == "ja":
+        print(("warenkorb: ") + str(list_P))
+        print(("preis(netto): ") + str(pr + pr2 + pr3))
+        print(("preis(brutto): ") + str(pr_bro + pr2_bro + pr3_bro))
 
+       else:
+        P = input("podukt eingeben : ")
+        r4 = input("Preis: ")
+        pr4 = float(r4)
+        fr = input("Ist ihr Produkt Lebensmittel('ja' eingeben) oder Essen(irgendwas eingeben) ? ")
+        list_P.insert(3, P)
 
+        if fr == "ja":
+         pr4_bro = pr4-pr4*0.07
 
+        else:  
+         pr4_bro = pr4-pr4*0.16    
+
+        re = input("Rechnung berechnen? ")
+
+        if re == "ja":
+         print(("warenkorb: ") + str(list_P))
+         print(("preis(netto): ") + str(pr + pr2 + pr3 + pr4))
+         print(("preis(brutto): ") + str(pr_bro + pr2_bro + pr3_bro + pr4_bro))
+
+        else:
+         P = input("podukt eingeben : ")
+         r5 = input("Preis: ")
+         pr5 = float(r5)
+         fr = input("Ist ihr Produkt Lebensmittel('ja' eingeben) oder Essen(irgendwas eingeben) ? ")
+         list_P.insert(4, P)
+
+         if fr == "ja":
+          pr5_bro = pr5-pr5*0.07
+
+         else:  
+          pr5_bro = pr5-pr5*0.16    
+
+         re = input("Rechnung berechnen? ")
+
+         if re == "ja":
+          print(("warenkorb: ") + str(list_P))
+          print(("preis(netto): ") + str(pr + pr2 + pr3 + pr4 + pr5))
+          print(("preis(brutto): ") + str(pr_bro + pr2_bro + pr3_bro + pr4_bro + pr5_bro))
+
+         else:
+          print("mehr als 5 produkte sind nicht erlaubt")
 
